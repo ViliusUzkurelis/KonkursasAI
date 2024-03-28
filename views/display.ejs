@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>This is index</h1>
+    <form action="/api/v1/list" method="post">
+        <input name="submit" type="text" placeholder="iveskite teksta">
+    </form>
+    <%= id %>
+    <% photo.forEach(photo => { %>
+    <div>
+        <form method="post" action="/api/v1/<%= photo.slice(photo.length - 1, photo.length) %>/add">
+            <a href="<%= photo %>" download><%= photo %></a>
+            <button type="submit" value="<%= photo %>" name="url">I mėgstamiausius</button>
+        </form>
+    </div>
+    <% }) %>
+
+</body>
+
+</html>

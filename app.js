@@ -1,3 +1,5 @@
+//To start server - npm run devStart
+
 
 var createError = require('http-errors');
 var express = require('express');
@@ -38,18 +40,6 @@ app.use(function(err, req, res, next) {
   // render the error page
   res.status(err.status || 500);
   res.render('error');
-});
-
-var con = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: null,
-  database: "konkursas",
-});
-
-con.connect(function(err) {
-  if (err) throw err;
-  console.log("Connected to the database");
 });
 
 app.listen(3000)

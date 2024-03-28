@@ -1,15 +1,15 @@
 var mysql = require('mysql');
+const { connect } = require('./routes');
 
-var con = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: null,
-  database: "Konkursas",
-});
-
-con.connect(function(err) {
-  if (err) throw err;
-  console.log("Connected!");
-});
-
-mnodule.exports = con
+var connection = mysql.createConnection({
+    host: "localhost",
+    user: "root",
+    password: null,
+    database: "konkursas",
+    multipleStatements: true
+  });
+  
+  connection.connect(function(err) {
+    if (err) throw err;
+    console.log("Connected to the database");
+  });
